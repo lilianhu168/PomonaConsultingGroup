@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pomona Consulting Group is a student-run consulting organization at the Claremont Colleges.">
+    <title>Pomona Consulting Group</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="loader" aria-hidden="true">
+      <div class="loader__pill">
+        <span class="loader__spinner"></span>
+        <span>welcome to PCG</span>
+      </div>
+    </div>
+
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="nav__brand" href="#top" aria-label="Pomona Consulting Group home">
+          <img src="assets/pcg-logo.png" alt="Pomona Consulting Group">
+        </a>
+        <div class="nav__links">
+          <a class="nav__link" href="#students">Students</a>
+          <a class="nav__link" href="#clients">Clients</a>
+          <a class="nav__link" href="#partnerships">Partnerships</a>
+          <a class="nav__link nav__desktop" href="#interest">Interest Forms</a>
+        </div>
+        <a class="button button--small nav__cta" href="#client-form">Partner with PCG <span aria-hidden="true">↗</span></a>
+        <button class="nav__toggle" type="button" data-menu-toggle aria-label="Open menu">
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+      <div class="mobile-menu" data-mobile-menu>
+        <a href="#students">Students</a>
+        <a href="#clients">Clients</a>
+        <a href="#partnerships">Partnerships</a>
+        <a href="#interest">Interest Forms</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero__media" aria-hidden="true">
+          <iframe
+            class="hero__youtube"
+            src="https://www.youtube.com/embed/3aF-ANf4KY8?autoplay=1&mute=1&controls=0&loop=1&playlist=3aF-ANf4KY8&playsinline=1&rel=0&modestbranding=1"
+            title="Pomona campus background video"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            tabindex="-1"
+          ></iframe>
+          <div class="hero__fallback"></div>
+        </div>
+
+        <div class="hero__content reveal">
+          <p class="eyebrow">Student-led consulting at the Claremont Colleges</p>
+          <h1>Pomona Consulting Group</h1>
+          <p class="hero__dek">PCG helps students build consulting experience through real projects, mentorship, networking, and workshops while helping organizations solve practical strategy challenges at no cost.</p>
+          <div class="hero__actions">
+            <a class="button" href="#student-form">Join the interest list <span aria-hidden="true">↗</span></a>
+            <a class="button button--light" href="#client-form">Work with us</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="logo-strip reveal" aria-label="PCG highlights">
+        <span>PCG connects</span>
+        <div class="logo-strip__track">
+          <strong>5C Students</strong>
+          <strong>Mentors</strong>
+          <strong>Startups</strong>
+          <strong>Community Groups</strong>
+          <strong>Fortune 500 Organizations</strong>
+          <strong>Free Client Services</strong>
+          <strong>Hands-on Projects</strong>
+          <strong>Career Development</strong>
+        </div>
+      </section>
+
+      <section class="mission section-pad">
+        <div class="mission__copy reveal">
+          <p class="eyebrow">We Strive for Excellence</p>
+          <h2>Real value for organizations. Real experience for students.</h2>
+          <p>Pomona Consulting Group is a student organization at the Claremont Colleges focused on bringing real value to a variety of businesses. We support pre-professional development for students through hands-on project experience, networking events, and workshops. Our former clients have ranged from startups to community groups and Fortune 500 organizations.</p>
+        </div>
+      </section>
+
+      <section class="split section-pad" id="students">
+        <div class="section-heading reveal">
+          <p class="eyebrow">For students</p>
+          <h2>A liberal arts approach to consulting.</h2>
+        </div>
+        <div class="focus-grid">
+          <article class="focus-card reveal">
+            <span>01</span>
+            <h3>Associate Consultant Program</h3>
+            <p>Explore consulting fundamentals, develop analytical habits, and get closer to the project work PCG teams take on.</p>
+          </article>
+          <article class="focus-card reveal">
+            <span>02</span>
+            <h3>Consultant Program</h3>
+            <p>Work directly on client-facing research, strategy, and recommendations with a student team and mentor support.</p>
+          </article>
+          <article class="focus-card reveal">
+            <span>03</span>
+            <h3>Project Leadership</h3>
+            <p>Lead teams, shape client communication, manage timelines, and turn ambiguous business questions into clear workstreams.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="metrics section-pad" id="impact">
+        <div class="metrics__copy reveal">
+          <p class="eyebrow">Student impact</p>
+          <h2>Built for breadth, access, and applied learning.</h2>
+          <p>PCG gives students multiple entry points into consulting, from associate consultant learning to client-facing project work.</p>
+        </div>
+        <div class="metrics__list reveal">
+          <div class="metric">
+            <strong data-count="80" data-suffix="+">0</strong><span>associate consultants on average per semester</span>
+          </div>
+          <div class="metric">
+            <strong data-count="5">0</strong><span>active projects per semester</span>
+          </div>
+          <div class="metric">
+            <strong data-count="24">0</strong><span>consultants per semester</span>
+          </div>
+          <div class="metric">
+            <strong data-count="40" data-suffix="+">0</strong><span>total projects completed</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="partnerships section-pad" id="partnerships">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Recent clients and partnerships</p>
+          <h2>From campus organizations to global brands.</h2>
+          <p>Selected examples from PCG's project history. We can replace these with approved logo files as you collect them.</p>
+        </div>
+        <div class="partner-marquee reveal" aria-label="Selected PCG partnerships">
+          <div class="partner-track">
+            <span>Wikimedia</span>
+            <span>RE/MAX</span>
+            <span>LG</span>
+            <span>Boys & Girls Clubs</span>
+            <span>City of Santa Barbara</span>
+            <span>The Student Life</span>
+            <span>Matriark</span>
+            <span>CREW</span>
+            <span>Access Global Group</span>
+            <span>Mouthfuel</span>
+            <span>Wikimedia</span>
+            <span>RE/MAX</span>
+            <span>LG</span>
+            <span>Boys & Girls Clubs</span>
+            <span>City of Santa Barbara</span>
+            <span>The Student Life</span>
+            <span>Matriark</span>
+            <span>CREW</span>
+            <span>Access Global Group</span>
+            <span>Mouthfuel</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="client-panel" id="clients">
+        <div class="client-panel__copy reveal">
+          <p class="eyebrow">For clients</p>
+          <h2>Free consulting support for business questions that need fresh thinking.</h2>
+          <p>PCG teams are student-led and mentor-supported. We help organizations clarify opportunities, research markets, evaluate strategy, and shape recommendations that are practical enough to use.</p>
+          <a class="button button--light" href="#client-form">Start a client inquiry <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="client-panel__steps reveal">
+          <div><span>01</span><strong>Tell us about your organization.</strong></div>
+          <div><span>02</span><strong>Share the problem or opportunity.</strong></div>
+          <div><span>03</span><strong>We assess fit and assemble a project team.</strong></div>
+        </div>
+      </section>
+
+      <section class="forms section-pad" id="interest">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Take action</p>
+          <h2>Two simple ways to get involved.</h2>
+        </div>
+        <div class="form-grid">
+          <form class="interest-form reveal" id="student-form" data-mailto="pomonaconsulting@gmail.com" data-subject="PCG Student Interest">
+            <h3>Student interest form</h3>
+            <p>Join the mailing list for applications, events, and program updates.</p>
+            <label>First name <input name="First name" autocomplete="given-name" required></label>
+            <label>Last name <input name="Last name" autocomplete="family-name" required></label>
+            <label>Email <input type="email" name="Email" autocomplete="email" required></label>
+            <label>What are you interested in?
+              <select name="Interest area" required>
+                <option value="">Select one</option>
+                <option>Associate Consultant Program</option>
+                <option>Consultant Program</option>
+                <option>Project Lead</option>
+                <option>Events and workshops</option>
+                <option>General updates</option>
+              </select>
+            </label>
+            <button class="button" type="submit">Submit interest <span aria-hidden="true">↗</span></button>
+          </form>
+
+          <form class="interest-form reveal" id="client-form" data-mailto="pomonaconsulting@gmail.com" data-subject="PCG Client Interest">
+            <h3>Client interest form</h3>
+            <p>Tell us where a student consulting team could support your business.</p>
+            <div class="form-row">
+              <label>First name <input name="First name" autocomplete="given-name" required></label>
+              <label>Last name <input name="Last name" autocomplete="family-name" required></label>
+            </div>
+            <label>Email <input type="email" name="Email" autocomplete="email" required></label>
+            <label>Company name <input name="Company name" required></label>
+            <label>Company overview <textarea name="Company overview" rows="3" required></textarea></label>
+            <label>Why are you interested in working with us? <textarea name="Interest reason" rows="3" required></textarea></label>
+            <label>How can we best support your business? <textarea name="Support needed" rows="3" required></textarea></label>
+            <label>How did you hear about PCG?
+              <select name="Referral source" required>
+                <option value="">Select one</option>
+                <option>Website</option>
+                <option>Social media</option>
+                <option>Personal referral</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <button class="button" type="submit">Submit client inquiry <span aria-hidden="true">↗</span></button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <a href="#students">Students</a>
+        <a href="#clients">Clients</a>
+        <a href="#partnerships">Partnerships</a>
+      </div>
+      <strong>Pomona Consulting Group</strong>
+      <div>
+        <a href="mailto:pomonaconsulting@gmail.com">Email</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
