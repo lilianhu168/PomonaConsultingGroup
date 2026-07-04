@@ -11,7 +11,7 @@ This is a static GitHub Pages-ready homepage for Pomona Consulting Group, combin
 
 ## Hero Video
 
-The hero currently uses the Pomona YouTube video as a muted background embed. If you later want a self-hosted video instead, place it in `assets/` and update the hero media block in `index.html`.
+The hero uses `assets/pomona-hero.mp4`, a short self-hosted clip trimmed from the Pomona campus video, with `assets/pomona-hero-poster.jpg` as the poster image.
 
 ## Forms
 

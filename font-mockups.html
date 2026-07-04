@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PCG Font Mockups</title>
+    <style>
+      :root {
+        --navy: #040050;
+        --blue: #494e9d;
+        --lavender: #868bbf;
+        --paper: #f7f7fb;
+        --ink: #111226;
+        --muted: #64687f;
+        --line: rgba(8, 7, 124, 0.16);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      header {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 42px 24px 18px;
+      }
+
+      header h1 {
+        margin: 0 0 10px;
+        font: 400 clamp(2.3rem, 5vw, 4.8rem)/0.95 Georgia, serif;
+        color: var(--navy);
+      }
+
+      header p {
+        max-width: 720px;
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+
+      main {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 20px 24px 80px;
+        display: grid;
+        gap: 28px;
+      }
+
+      .mockup {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: white;
+      }
+
+      .mockup__label {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 16px 18px;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        min-height: 390px;
+        display: grid;
+        align-items: end;
+        padding: 44px;
+        color: white;
+        background:
+          linear-gradient(rgba(4, 0, 80, 0.72), rgba(4, 0, 80, 0.86)),
+          url("assets/pomona-hero-poster.jpg") center/cover;
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        opacity: 0.75;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-size: 0.74rem;
+      }
+
+      .hero h2 {
+        max-width: 840px;
+        margin: 0 0 16px;
+      }
+
+      .hero p {
+        max-width: 650px;
+        margin: 0 0 24px;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.86);
+      }
+
+      .button {
+        display: inline-flex;
+        width: fit-content;
+        padding: 12px 18px;
+        border-radius: 999px;
+        background: white;
+        color: var(--navy);
+        text-decoration: none;
+        font-size: 0.92rem;
+      }
+
+      .body-sample {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 18px;
+        padding: 24px;
+      }
+
+      .body-sample article {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfbff;
+      }
+
+      .body-sample h3 {
+        margin: 0 0 10px;
+      }
+
+      .body-sample p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .palette-a {
+        --display: Georgia, "Times New Roman", serif;
+        --body: Arial, Helvetica, sans-serif;
+      }
+
+      .palette-b {
+        --display: Baskerville, "Libre Baskerville", Georgia, serif;
+        --body: "Avenir Next", Avenir, Arial, sans-serif;
+      }
+
+      .palette-c {
+        --display: Didot, "Bodoni 72", Georgia, serif;
+        --body: "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .palette-d {
+        --display: "Iowan Old Style", Palatino, Georgia, serif;
+        --body: "Gill Sans", "Avenir Next", Arial, sans-serif;
+      }
+
+      .mockup h2,
+      .mockup h3 {
+        font-family: var(--display);
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+
+      .mockup h2 {
+        font-size: clamp(3rem, 7vw, 6.4rem);
+        line-height: 0.92;
+      }
+
+      .mockup h3 {
+        font-size: 1.55rem;
+        line-height: 1.1;
+      }
+
+      .mockup p,
+      .mockup a,
+      .mockup .eyebrow,
+      .mockup__label {
+        font-family: var(--body);
+      }
+
+      @media (max-width: 760px) {
+        .hero { padding: 28px; }
+        .body-sample { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>PCG Font Directions</h1>
+      <p>These are mockups only. They preview more polished serif-forward directions without changing the actual homepage.</p>
+    </header>
+
+    <main>
+      <section class="mockup palette-a">
+        <div class="mockup__label"><strong>A. Georgia + Arial</strong><span>Classic, accessible, easy to host</span></div>
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Student-led consulting at the Claremont Colleges</p>
+            <h2>Pomona Consulting Group</h2>
+            <p>PCG helps students build consulting experience through real projects, mentorship, networking, and workshops while helping organizations solve practical strategy challenges at no cost.</p>
+            <a class="button" href="#">Join the interest list</a>
+          </div>
+        </div>
+        <div class="body-sample">
+          <article><h3>Associate Consultant Program</h3><p>Explore consulting fundamentals and develop analytical habits through structured learning.</p></article>
+          <article><h3>Consultant Program</h3><p>Work directly on client-facing research, strategy, and recommendations.</p></article>
+          <article><h3>Project Leadership</h3><p>Lead teams, shape communication, and turn ambiguity into clear workstreams.</p></article>
+        </div>
+      </section>
+
+      <section class="mockup palette-b">
+        <div class="mockup__label"><strong>B. Baskerville + Avenir Next</strong><span>Most professional, warm, collegiate</span></div>
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Student-led consulting at the Claremont Colleges</p>
+            <h2>Pomona Consulting Group</h2>
+            <p>PCG helps students build consulting experience through real projects, mentorship, networking, and workshops while helping organizations solve practical strategy challenges at no cost.</p>
+            <a class="button" href="#">Join the interest list</a>
+          </div>
+        </div>
+        <div class="body-sample">
+          <article><h3>Associate Consultant Program</h3><p>Explore consulting fundamentals and develop analytical habits through structured learning.</p></article>
+          <article><h3>Consultant Program</h3><p>Work directly on client-facing research, strategy, and recommendations.</p></article>
+          <article><h3>Project Leadership</h3><p>Lead teams, shape communication, and turn ambiguity into clear workstreams.</p></article>
+        </div>
+      </section>
+
+      <section class="mockup palette-c">
+        <div class="mockup__label"><strong>C. Didot + Helvetica Neue</strong><span>Elegant, editorial, more fashion-magazine</span></div>
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Student-led consulting at the Claremont Colleges</p>
+            <h2>Pomona Consulting Group</h2>
+            <p>PCG helps students build consulting experience through real projects, mentorship, networking, and workshops while helping organizations solve practical strategy challenges at no cost.</p>
+            <a class="button" href="#">Join the interest list</a>
+          </div>
+        </div>
+        <div class="body-sample">
+          <article><h3>Associate Consultant Program</h3><p>Explore consulting fundamentals and develop analytical habits through structured learning.</p></article>
+          <article><h3>Consultant Program</h3><p>Work directly on client-facing research, strategy, and recommendations.</p></article>
+          <article><h3>Project Leadership</h3><p>Lead teams, shape communication, and turn ambiguity into clear workstreams.</p></article>
+        </div>
+      </section>
+
+      <section class="mockup palette-d">
+        <div class="mockup__label"><strong>D. Iowan Old Style + Gill Sans</strong><span>Academic, distinctive, slightly literary</span></div>
+        <div class="hero">
+          <div>
+            <p class="eyebrow">Student-led consulting at the Claremont Colleges</p>
+            <h2>Pomona Consulting Group</h2>
+            <p>PCG helps students build consulting experience through real projects, mentorship, networking, and workshops while helping organizations solve practical strategy challenges at no cost.</p>
+            <a class="button" href="#">Join the interest list</a>
+          </div>
+        </div>
+        <div class="body-sample">
+          <article><h3>Associate Consultant Program</h3><p>Explore consulting fundamentals and develop analytical habits through structured learning.</p></article>
+          <article><h3>Consultant Program</h3><p>Work directly on client-facing research, strategy, and recommendations.</p></article>
+          <article><h3>Project Leadership</h3><p>Lead teams, shape communication, and turn ambiguity into clear workstreams.</p></article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
