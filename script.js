@@ -74,6 +74,17 @@ document.querySelectorAll("[data-count]").forEach((number) => countObserver.obse
 document.querySelectorAll("[data-mailto]").forEach((form) => {
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    const requiredCheckboxName = form.dataset.requireCheckbox;
+
+    if (requiredCheckboxName) {
+      const hasSelection = form.querySelector(`input[name="${requiredCheckboxName}"]:checked`);
+      if (!hasSelection) {
+        form.querySelector(`input[name="${requiredCheckboxName}"]`)?.focus();
+        window.alert(`Please select at least one ${requiredCheckboxName.toLowerCase()} option.`);
+        return;
+      }
+    }
+
     const formData = new FormData(form);
     const lines = Array.from(formData.entries()).map(([key, value]) => `${key}: ${value}`);
     const subject = encodeURIComponent(form.dataset.subject || "PCG Interest Form");

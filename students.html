@@ -19,7 +19,14 @@
         <a class="nav__brand" href="index.html" aria-label="Pomona Consulting Group home"><img src="assets/pcg-logo.png" alt="Pomona Consulting Group"></a>
         <div class="nav__links">
           <a class="nav__link" href="index.html">Home</a>
-          <a class="nav__link is-active" href="students.html">For Students</a>
+          <div class="nav__item nav__item--dropdown">
+            <a class="nav__link is-active" href="students.html">For Students</a>
+            <div class="nav__dropdown" aria-label="For Students submenu">
+              <a href="students.html">Overview</a>
+              <a href="recruiting.html">Application Timeline</a>
+              <a href="events.html">Workshops & Events</a>
+            </div>
+          </div>
           <a class="nav__link" href="clients.html">For Clients</a>
           <a class="nav__link" href="leadership.html">Leadership</a>
         </div>
@@ -28,6 +35,8 @@
       <div class="mobile-menu" data-mobile-menu>
         <a href="index.html">Home</a>
         <a href="students.html">For Students</a>
+        <a href="recruiting.html">Application Timeline</a>
+        <a href="events.html">Workshops & Events</a>
         <a href="clients.html">For Clients</a>
         <a href="leadership.html">Leadership</a>
       </div>
@@ -57,7 +66,7 @@
               <a class="button button--warm" href="events.html">Upcoming Events</a>
             </div>
           </div>
-          <figure class="photo-card photo-card--top reveal">
+          <figure class="photo-card photo-card--students-team reveal">
             <img src="assets/photos/students-team.jpg" alt="PCG students standing together on campus">
           </figure>
         </div>
@@ -102,13 +111,13 @@
           <div class="section-heading">
             <p class="eyebrow">Follow along</p>
             <h2>Get the latest PCG updates on Instagram.</h2>
-            <p>Recruiting reminders, event signups, application links, and project updates are usually shared through Instagram and PCG's Linktree.</p>
+            <p>Recruiting reminders, event signups, application links, and project updates are usually shared through Instagram. Application timelines and workshops now live on their own pages so they are easier to update each semester.</p>
             <a class="button" href="https://www.instagram.com/pomonaconsulting/" target="_blank" rel="noreferrer">Follow @pomonaconsulting</a>
           </div>
           <div class="post-grid" aria-label="Recent Instagram post placeholders">
-            <article class="post-card"><strong>Recruiting Updates</strong><span>Replace with a recent post</span></article>
-            <article class="post-card"><strong>Events and Workshops</strong><span>Replace with a recent post</span></article>
-            <article class="post-card"><strong>Project Highlights</strong><span>Replace with a recent post</span></article>
+            <article class="post-card post-card--recruiting"><strong>Recruiting Updates</strong><span>Replace with a recent post</span></article>
+            <article class="post-card post-card--events"><strong>Events and Workshops</strong><span>Replace with a recent post</span></article>
+            <article class="post-card post-card--presentation"><strong>Project Highlights</strong><span>Replace with a recent post</span></article>
           </div>
         </div>
       </section>
@@ -117,18 +126,21 @@
         <div class="section-heading reveal">
           <p class="eyebrow">Stay in the loop</p>
           <h2>Student interest form</h2>
-          <p>Applications and event signup sheets are usually managed through Google Forms and shared through PCG's Linktree. Replace the placeholder Linktree below when the official URL is ready.</p>
-          <a class="button button--warm" href="#" aria-label="Placeholder Linktree URL">Linktree Placeholder</a>
+          <p>Applications and event signup sheets are easiest to maintain through Google Forms because responses can flow directly into Google Sheets. This on-site form currently opens an email draft; replace the mailto flow with a Google Form embed or Apps Script endpoint when the official sheet is ready.</p>
+          <div class="mini-nav">
+            <a class="button button--warm" href="recruiting.html">View Application Timelines</a>
+            <a class="button" href="events.html">View Workshops & Events</a>
+          </div>
         </div>
-        <form class="interest-form reveal" data-mailto="pomonaconsulting@gmail.com" data-subject="PCG Student Interest">
+        <form class="interest-form reveal" data-mailto="pomonaconsulting@gmail.com" data-subject="PCG Student Interest" data-require-checkbox="Interested in">
           <div class="form-row">
             <label>First name <input name="First name" autocomplete="given-name" required></label>
             <label>Last name <input name="Last name" autocomplete="family-name" required></label>
           </div>
           <label>Email <input type="email" name="Email" autocomplete="email" required></label>
-          <div>
-            <p class="eyebrow">Interested in</p>
-            <div class="check-grid">
+          <div class="interest-choice-panel">
+            <p class="eyebrow">Interested in <span aria-hidden="true">*</span></p>
+            <div class="check-grid check-grid--stack">
               <label><input type="checkbox" name="Interested in" value="Associate Consultant"> Associate Consultant</label>
               <label><input type="checkbox" name="Interested in" value="Consultant"> Consultant</label>
               <label><input type="checkbox" name="Interested in" value="Project Lead"> Project Lead</label>
