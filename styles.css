@@ -1194,6 +1194,8 @@ h3 {
 }
 
 .interest-form {
+  grid-column: 2;
+  grid-row: 1;
   width: min(640px, 100%);
   justify-self: end;
   display: grid;
@@ -1231,6 +1233,8 @@ h3 {
 }
 
 .form-success {
+  grid-column: 2;
+  grid-row: 1;
   width: min(640px, 100%);
   justify-self: end;
   display: grid;
@@ -1484,6 +1488,8 @@ textarea:focus {
 
   .interest-form,
   .form-success {
+    grid-column: auto;
+    grid-row: auto;
     width: 100%;
     justify-self: stretch;
   }
