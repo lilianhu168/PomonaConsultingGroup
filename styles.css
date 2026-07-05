@@ -145,6 +145,7 @@ video {
   position: relative;
   display: flex;
   align-items: center;
+  height: 100%;
 }
 
 .nav__link {
@@ -154,7 +155,7 @@ video {
 
 .nav__dropdown {
   position: absolute;
-  top: calc(100% + 14px);
+  top: calc(100% - 2px);
   left: 50%;
   min-width: 220px;
   display: grid;
