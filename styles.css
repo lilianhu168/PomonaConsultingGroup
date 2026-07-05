@@ -779,7 +779,8 @@ h3 {
 }
 
 .photo-card--students-team img {
-  object-position: center 34%;
+  min-height: 360px;
+  object-position: center 42%;
 }
 
 .photo-card--presentation img {
@@ -886,19 +887,32 @@ h3 {
 }
 
 .journey-grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 38px;
+  gap: 24px;
+  margin-top: 42px;
+}
+
+.journey-grid::before {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 42px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(217, 184, 93, 0.8), transparent);
+  pointer-events: none;
 }
 
 .journey-card {
   position: relative;
-  min-height: 350px;
+  z-index: 1;
+  min-height: 385px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 24px;
+  padding: 28px;
   border: 1px solid rgba(4, 0, 80, 0.12);
   border-radius: var(--radius);
   background: var(--white);
@@ -909,11 +923,11 @@ h3 {
 .journey-card::before {
   content: "";
   position: absolute;
-  left: 24px;
-  right: 24px;
-  top: 84px;
+  left: 28px;
+  right: 28px;
+  top: 74px;
   height: 1px;
-  background: linear-gradient(90deg, var(--gold), transparent);
+  background: linear-gradient(90deg, rgba(217, 184, 93, 0.92), transparent);
 }
 
 .journey-card:hover {
@@ -923,7 +937,7 @@ h3 {
 }
 
 .journey-card span {
-  min-height: 34px;
+  min-height: 28px;
   display: flex;
   align-items: flex-start;
   color: var(--sage-dark);
@@ -934,6 +948,11 @@ h3 {
 }
 
 .journey-card div {
+  margin-top: 28px;
+}
+
+.journey-card .button {
+  width: 100%;
   margin-top: 18px;
 }
 
@@ -1010,15 +1029,33 @@ h3 {
   color: var(--sage-dark);
 }
 
-.check-grid--stack {
-  width: min(420px, 100%);
-  grid-template-columns: 1fr;
+.check-grid--interest {
+  width: min(560px, 100%);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.check-grid--interest label {
+  min-height: 58px;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.check-grid--interest label span {
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.check-grid--interest input {
+  flex: 0 0 auto;
 }
 
 .instagram-grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 28px;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 34px;
   align-items: center;
 }
 
@@ -1029,34 +1066,50 @@ h3 {
 }
 
 .post-card {
-  min-height: 180px;
+  min-height: 260px;
+  aspect-ratio: 4 / 3;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 16px;
+  padding: 18px;
   border-radius: var(--radius);
   background:
-    linear-gradient(to top, rgba(6, 6, 79, 0.7), transparent 70%),
+    linear-gradient(to top, rgba(6, 6, 79, 0.74), rgba(6, 6, 79, 0.08) 70%),
     url("assets/photos/team-warm.jpg") center/cover;
   color: var(--white);
   overflow: hidden;
 }
 
+.post-card strong {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.post-card span {
+  max-width: 220px;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
 .post-card--events {
   background:
-    linear-gradient(to top, rgba(6, 6, 79, 0.7), transparent 70%),
+    linear-gradient(to top, rgba(6, 6, 79, 0.74), rgba(6, 6, 79, 0.08) 70%),
     url("assets/photos/follow-events.jpg") center 44%/cover;
 }
 
 .post-card--presentation {
   background:
-    linear-gradient(to top, rgba(6, 6, 79, 0.7), transparent 70%),
+    linear-gradient(to top, rgba(6, 6, 79, 0.74), rgba(6, 6, 79, 0.08) 70%),
     url("assets/photos/follow-presentation.jpg") center 40%/cover;
 }
 
 .post-card--recruiting {
   background:
-    linear-gradient(to top, rgba(6, 6, 79, 0.7), transparent 70%),
+    linear-gradient(to top, rgba(6, 6, 79, 0.74), rgba(6, 6, 79, 0.08) 70%),
     url("assets/photos/follow-recruiting.jpg") center 44%/cover;
 }
 
@@ -1279,6 +1332,18 @@ textarea:focus {
     width: 100%;
   }
 
+  .journey-grid::before {
+    display: none;
+  }
+
+  .journey-card {
+    min-height: auto;
+  }
+
+  .post-card {
+    min-height: 240px;
+  }
+
   .footer,
   .footer div,
   .footer div:last-child {
@@ -1335,6 +1400,10 @@ textarea:focus {
   .timeline-role,
   .check-grid,
   .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .check-grid--interest {
     grid-template-columns: 1fr;
   }
 
