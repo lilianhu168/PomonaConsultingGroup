@@ -1071,12 +1071,12 @@ h3 {
   gap: 10px;
 }
 
-.check-grid--interest label {
-  display: flex;
+.interest-form .check-grid--interest label {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   min-height: 54px;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  column-gap: 16px;
   padding: 14px 16px;
   border: 1px solid rgba(4, 0, 80, 0.12);
   border-radius: var(--radius);
@@ -1085,17 +1085,15 @@ h3 {
   transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.check-grid--interest label span {
-  flex: 1 1 auto;
+.interest-form .check-grid--interest label span {
   min-width: 0;
   color: var(--ink);
   font-weight: 700;
   line-height: 1.2;
 }
 
-.check-grid--interest input {
-  flex: 0 0 auto;
-  margin-left: auto;
+.interest-form .check-grid--interest input {
+  justify-self: end;
   width: 18px;
   height: 18px;
   min-height: 0;
