@@ -415,16 +415,16 @@ h3 {
 .logo-track {
   display: flex;
   width: max-content;
-  gap: 16px;
-  animation: marquee 52s linear infinite;
+  gap: 18px;
+  animation: marquee 56s linear infinite;
 }
 
 .logo-card {
-  width: 188px;
-  height: 112px;
+  width: 220px;
+  height: 132px;
   display: grid;
   place-items: center;
-  padding: 18px;
+  padding: 12px;
   border: 1px solid rgba(4, 0, 80, 0.1);
   border-radius: var(--radius);
   background: var(--white);
@@ -432,13 +432,61 @@ h3 {
 }
 
 .logo-card--wide {
-  width: 250px;
+  width: 300px;
+}
+
+.logo-card--tall {
+  width: 184px;
 }
 
 .logo-card img {
   max-width: 100%;
-  max-height: 76px;
+  max-height: 104px;
   object-fit: contain;
+}
+
+.logo-card--wide img {
+  max-width: 96%;
+  max-height: 96px;
+}
+
+.logo-card--tall img,
+.logo-card--seal img,
+.logo-card--remax img {
+  max-height: 116px;
+}
+
+.logo-card--matriark img,
+.logo-card--student-life img,
+.logo-card--crew img,
+.logo-card--mouthfuel img,
+.logo-card--projexon img {
+  max-width: 98%;
+}
+
+.logo-card--matriark img {
+  max-height: 92px;
+}
+
+.logo-card--student-life img {
+  max-height: 86px;
+}
+
+.logo-card--mouthfuel img {
+  max-height: 94px;
+}
+
+.logo-card--projexon img {
+  max-height: 100px;
+}
+
+.logo-card--lg img,
+.logo-card--boys-girls img {
+  max-height: 108px;
+}
+
+.logo-card--access img {
+  max-height: 116px;
 }
 
 .metrics {
@@ -1131,15 +1179,31 @@ textarea:focus {
   }
 
   .logo-card {
-    width: 156px;
-    height: 96px;
+    width: 174px;
+    height: 108px;
+    padding: 10px;
   }
 
   .logo-card--wide {
-    width: 198px;
+    width: 226px;
+  }
+
+  .logo-card--tall {
+    width: 150px;
   }
 
   .logo-card img {
-    max-height: 66px;
+    max-height: 84px;
+  }
+
+  .logo-card--wide img {
+    max-height: 78px;
+  }
+
+  .logo-card--tall img,
+  .logo-card--seal img,
+  .logo-card--remax img,
+  .logo-card--access img {
+    max-height: 94px;
   }
 }
