@@ -233,6 +233,20 @@ video {
   color: var(--navy);
 }
 
+.button--icon {
+  gap: 9px;
+}
+
+.button--icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .nav__toggle {
   display: none;
   width: 38px;
