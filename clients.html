@@ -10,66 +10,37 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="loader" aria-hidden="true">
-      <div class="loader__pill"><span class="loader__spinner"></span><span>welcome to PCG</span></div>
-    </div>
+    <div class="loader" aria-hidden="true"><div class="loader__pill"><span class="loader__spinner"></span><span>welcome to PCG</span></div></div>
 
     <header class="site-header site-header--solid" data-header>
       <nav class="nav" aria-label="Primary navigation">
         <a class="nav__brand" href="index.html" aria-label="Pomona Consulting Group home"><img src="assets/pcg-logo.png" alt="Pomona Consulting Group"></a>
-        <div class="nav__links">
-          <a class="nav__link" href="index.html">Home</a>
-          <a class="nav__link" href="students.html">For Students</a>
-          <a class="nav__link is-active" href="clients.html">For Clients</a>
-          <a class="nav__link" href="leadership.html">Leadership</a>
-        </div>
+        <div class="nav__links"><a class="nav__link" href="index.html">Home</a><a class="nav__link" href="students.html">For Students</a><a class="nav__link is-active" href="clients.html">For Clients</a><a class="nav__link" href="leadership.html">Leadership</a></div>
         <button class="nav__toggle" type="button" data-menu-toggle aria-label="Open menu"><span></span><span></span></button>
       </nav>
-      <div class="mobile-menu" data-mobile-menu>
-        <a href="index.html">Home</a>
-        <a href="students.html">For Students</a>
-        <a href="clients.html">For Clients</a>
-        <a href="leadership.html">Leadership</a>
-      </div>
+      <div class="mobile-menu" data-mobile-menu><a href="index.html">Home</a><a href="students.html">For Students</a><a href="clients.html">For Clients</a><a href="leadership.html">Leadership</a></div>
     </header>
 
     <main>
-      <section class="hero hero--page">
+      <section class="hero hero--page hero--clients">
         <div class="hero__content reveal">
           <p class="eyebrow">For clients</p>
-          <h1>Student-led consulting for real business questions.</h1>
+          <h1>Support for business questions that need fresh thinking.</h1>
           <p class="hero__dek">PCG helps small businesses, founders, organizations, and professional teams think through strategic, operational, and growth-related challenges with focused student consulting projects.</p>
-          <div class="hero__actions">
-            <a class="button button--warm" href="#client-interest">Start a Client Inquiry</a>
-            <a class="button button--light" href="#process">See the Process</a>
-          </div>
+          <div class="hero__actions"><a class="button button--warm" href="#client-interest">Start a Client Inquiry</a><a class="button button--light" href="#process">See the Process</a></div>
         </div>
       </section>
 
       <section class="page-section section-pad">
-        <div class="content-split">
+        <div class="photo-split">
           <div class="section-heading reveal">
             <p class="eyebrow">What PCG offers</p>
             <h2>A focused outside team for problems you have not had time to solve.</h2>
             <p>Our consultants bring analytical structure, fresh perspective, and careful research to questions that matter to your organization. Projects are student-led and supported by PCG leadership and mentors.</p>
           </div>
-          <div class="detail-grid reveal">
-            <article class="detail-card">
-              <span>Research</span>
-              <h3>Understand the market</h3>
-              <p>Explore competitors, customer segments, industry shifts, and opportunities for positioning or expansion.</p>
-            </article>
-            <article class="detail-card">
-              <span>Strategy</span>
-              <h3>Clarify the next move</h3>
-              <p>Frame strategic options, evaluate tradeoffs, and translate ambiguity into a practical recommendation.</p>
-            </article>
-            <article class="detail-card">
-              <span>Operations</span>
-              <h3>Improve how work gets done</h3>
-              <p>Map workflows, identify bottlenecks, and suggest process improvements that are realistic for your team.</p>
-            </article>
-          </div>
+          <figure class="photo-card photo-card--presentation reveal">
+            <img src="assets/photos/clients-team.jpg" alt="PCG project team outdoors">
+          </figure>
         </div>
       </section>
 
@@ -79,36 +50,27 @@
           <h2>Where student teams can help.</h2>
         </div>
         <div class="project-grid reveal">
-          <article class="detail-card">
-            <span>01</span>
-            <h3>Market Research</h3>
-            <p>Customer segments, competitor landscapes, market sizing, and opportunity scans.</p>
-          </article>
-          <article class="detail-card">
-            <span>02</span>
-            <h3>Growth Strategy</h3>
-            <p>Expansion ideas, go-to-market thinking, partnership opportunities, and positioning questions.</p>
-          </article>
-          <article class="detail-card">
-            <span>03</span>
-            <h3>Customer Research</h3>
-            <p>Surveys, interview synthesis, customer needs, and insights that can inform decisions.</p>
-          </article>
-          <article class="detail-card">
-            <span>04</span>
-            <h3>Workflow Improvement</h3>
-            <p>Process mapping, operational pain points, handoff issues, and practical recommendations.</p>
-          </article>
-          <article class="detail-card">
-            <span>05</span>
-            <h3>AI and Workflow Analysis</h3>
-            <p>Early-stage analysis of repetitive workflows, tool opportunities, and implementation considerations.</p>
-          </article>
-          <article class="detail-card">
-            <span>06</span>
-            <h3>Operational Recommendations</h3>
-            <p>Prioritized next steps that match your organization's size, constraints, and goals.</p>
-          </article>
+          <article class="detail-card"><span>01</span><h3>Market Research</h3><p>Customer segments, competitor landscapes, market sizing, and opportunity scans.</p></article>
+          <article class="detail-card"><span>02</span><h3>Growth Strategy</h3><p>Expansion ideas, go-to-market thinking, partnership opportunities, and positioning questions.</p></article>
+          <article class="detail-card"><span>03</span><h3>Customer Research</h3><p>Surveys, interview synthesis, customer needs, and insights that can inform decisions.</p></article>
+          <article class="detail-card"><span>04</span><h3>Workflow Improvement</h3><p>Process mapping, operational pain points, handoff issues, and practical recommendations.</p></article>
+          <article class="detail-card"><span>05</span><h3>AI and Workflow Analysis</h3><p>Early-stage analysis of repetitive workflows, tool opportunities, and implementation considerations.</p></article>
+          <article class="detail-card"><span>06</span><h3>Product Implementation Testing</h3><p>Testing product rollouts, user flows, implementation friction, and early feedback loops.</p></article>
+          <article class="detail-card"><span>07</span><h3>Data Collection</h3><p>Structured surveys, desk research, interview collection, and information gathering to support decisions.</p></article>
+          <article class="detail-card"><span>08</span><h3>Strategic Recommendations</h3><p>Prioritized next steps that match your organization's size, constraints, and goals.</p></article>
+        </div>
+      </section>
+
+      <section class="page-section section-pad">
+        <div class="photo-split">
+          <figure class="photo-card reveal">
+            <img src="assets/photos/clients-boba.jpg" alt="PCG students together after final presentations">
+          </figure>
+          <div class="section-heading reveal">
+            <p class="eyebrow">Why partner with PCG</p>
+            <h2>Careful research, clear synthesis, and a team that wants the work to matter.</h2>
+            <p>PCG is especially useful when your team has an important question but limited time to investigate it. Student teams can help clarify the problem, gather evidence, and turn findings into a practical final recommendation.</p>
+          </div>
         </div>
       </section>
 
@@ -118,21 +80,9 @@
           <h2>Simple enough to start, structured enough to be useful.</h2>
         </div>
         <div class="detail-grid reveal">
-          <article class="process-card">
-            <span>01</span>
-            <h3>Share the challenge</h3>
-            <p>Tell us about your organization, the decision or problem in front of you, and what support would be most useful.</p>
-          </article>
-          <article class="process-card">
-            <span>02</span>
-            <h3>Scope the project</h3>
-            <p>PCG reviews fit, clarifies the project question, and shapes a focused workstream for a student consulting team.</p>
-          </article>
-          <article class="process-card">
-            <span>03</span>
-            <h3>Deliver recommendations</h3>
-            <p>The team researches, synthesizes, and presents findings with practical recommendations your team can act on.</p>
-          </article>
+          <article class="process-card"><span>01</span><h3>Share the challenge</h3><p>Tell us about your organization, the decision or problem in front of you, and what support would be most useful.</p></article>
+          <article class="process-card"><span>02</span><h3>Scope the project</h3><p>PCG reviews fit, clarifies the project question, and shapes a focused workstream for a student consulting team.</p></article>
+          <article class="process-card"><span>03</span><h3>Deliver recommendations</h3><p>The team researches, synthesizes, and presents findings with practical recommendations your team can act on.</p></article>
         </div>
       </section>
 
@@ -140,28 +90,31 @@
         <div class="section-heading reveal">
           <p class="eyebrow">Partner with PCG</p>
           <h2>Client interest form</h2>
-          <p>Use this intake to describe your organization and the business challenge you would like a PCG team to explore.</p>
+          <p>This static site generates a pre-filled email inquiry to <a href="mailto:pomonaconsulting@gmail.com">pomonaconsulting@gmail.com</a>. If PCG wants spreadsheet/database collection later, connect this form to Google Forms, Formspree, or Airtable.</p>
         </div>
         <form class="interest-form reveal" data-mailto="pomonaconsulting@gmail.com" data-subject="PCG Client Interest">
-          <div class="form-row">
-            <label>First name <input name="First name" autocomplete="given-name" required></label>
-            <label>Last name <input name="Last name" autocomplete="family-name" required></label>
-          </div>
+          <label>Name <input name="Name" autocomplete="name" required></label>
+          <label>Organization/company <input name="Organization/company" required></label>
           <label>Email <input type="email" name="Email" autocomplete="email" required></label>
-          <label>Company name <input name="Company name" required></label>
-          <label>Company overview <textarea name="Company overview" rows="3" required></textarea></label>
-          <label>Why are you interested in working with us? <textarea name="Interest reason" rows="3" required></textarea></label>
-          <label>How can we best support your business? <textarea name="Support needed" rows="3" required></textarea></label>
-          <label>How did you hear about PCG?
-            <select name="Referral source" required>
+          <label>Role/title <input name="Role/title"></label>
+          <label>What challenge are you hoping PCG can help with? <textarea name="Challenge" rows="4" required></textarea></label>
+          <label>What type of support are you interested in?
+            <select name="Support type" required>
               <option value="">Select one</option>
-              <option>Website</option>
-              <option>Social media</option>
-              <option>Personal referral</option>
-              <option>Other</option>
+              <option>Market research</option>
+              <option>Growth strategy</option>
+              <option>Workflow or operational improvement</option>
+              <option>Customer research</option>
+              <option>AI/workflow analysis</option>
+              <option>Product implementation testing</option>
+              <option>Data collection</option>
+              <option>Strategic recommendations</option>
+              <option>Not sure yet</option>
             </select>
           </label>
-          <button class="button" type="submit">Submit Client Inquiry</button>
+          <label>Preferred timeline <input name="Preferred timeline" placeholder="Example: Fall semester, within 6-8 weeks, flexible"></label>
+          <label>Additional context <textarea name="Additional context" rows="4"></textarea></label>
+          <button class="button" type="submit">Generate Email Inquiry</button>
         </form>
       </section>
     </main>
@@ -169,9 +122,8 @@
     <footer class="footer">
       <strong>Pomona Consulting Group</strong>
       <div><a href="index.html">Home</a><a href="students.html">For Students</a><a href="leadership.html">Leadership</a></div>
-      <div><a href="mailto:pomonaconsulting@gmail.com">Email</a><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></div>
+      <div><a href="mailto:pomonaconsulting@gmail.com">Email</a><a href="https://www.instagram.com/pomonaconsulting/" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.linkedin.com/company/pomona-consulting-group" target="_blank" rel="noreferrer">LinkedIn</a></div>
     </footer>
-
     <script src="script.js"></script>
   </body>
 </html>

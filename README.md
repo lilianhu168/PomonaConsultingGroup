@@ -6,12 +6,15 @@ This is a static GitHub Pages-ready site for Pomona Consulting Group, combining 
 
 - Homepage copy: `index.html`
 - Student page: `students.html`
+- Recruiting timeline page: `recruiting.html`
+- Upcoming events page: `events.html`
 - Client page: `clients.html`
 - Leadership page: `leadership.html`
 - Styling and layout: `styles.css`
 - Animations and interactions: `script.js`
 - Videos/images you want to host directly: place them in `assets/`
 - Client and partner logos: place them in `assets/logos/`
+- PCG/team photos: place them in `assets/photos/`
 
 ## Hero Video
 
@@ -19,7 +22,7 @@ The hero uses `assets/pomona-hero.mp4`, a short self-hosted clip trimmed from th
 
 ## Forms
 
-The student interest form lives on `students.html`, and the client interest form lives on `clients.html`. Both currently create pre-filled email drafts to `pomonaconsulting@gmail.com`. To collect responses in a database or spreadsheet, replace the `data-mailto` setup with a backend such as Google Forms, Formspree, Netlify Forms, or a custom endpoint.
+The student interest form lives on `students.html`, and the client interest form lives on `clients.html`. Both currently create pre-filled email drafts to `pomonaconsulting@gmail.com`. To collect responses in a database or spreadsheet, replace the `data-mailto` setup with Google Forms, Formspree, Airtable, or another form backend.
 
 ## Publish On GitHub Pages
 

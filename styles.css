@@ -222,11 +222,29 @@ video {
 }
 
 .hero--page {
-  min-height: 58svh;
+  min-height: 52svh;
   align-items: center;
   background:
-    linear-gradient(135deg, rgba(6, 6, 79, 0.9), rgba(70, 102, 75, 0.74)),
+    linear-gradient(135deg, rgba(6, 6, 79, 0.68), rgba(70, 102, 75, 0.46)),
     url("assets/pomona-hero-poster.jpg") center/cover;
+}
+
+.hero--students {
+  background:
+    linear-gradient(135deg, rgba(6, 6, 79, 0.54), rgba(184, 111, 82, 0.26)),
+    url("assets/photos/students-hero.jpg") center 58%/cover;
+}
+
+.hero--clients {
+  background:
+    linear-gradient(135deg, rgba(6, 6, 79, 0.58), rgba(70, 102, 75, 0.32)),
+    url("assets/photos/clients-boba.jpg") center/cover;
+}
+
+.hero--leadership {
+  background:
+    linear-gradient(135deg, rgba(6, 6, 79, 0.48), rgba(70, 102, 75, 0.24)),
+    url("assets/photos/leadership-hero.jpg") center 36%/cover;
 }
 
 .hero__media {
@@ -306,8 +324,18 @@ h3 {
 
 h1 {
   margin: 0 auto 18px;
-  font-size: clamp(3.5rem, 8vw, 7.6rem);
+  font-size: clamp(3rem, 6vw, 6.2rem);
   line-height: 0.92;
+}
+
+.hero--home h1 {
+  font-size: clamp(3.5rem, 8vw, 7.6rem);
+}
+
+.hero--page h1 {
+  max-width: 920px;
+  font-size: clamp(2.6rem, 5vw, 5.2rem);
+  line-height: 0.96;
 }
 
 h2 {
@@ -392,8 +420,8 @@ h3 {
 }
 
 .logo-card {
-  width: 160px;
-  height: 94px;
+  width: 188px;
+  height: 112px;
   display: grid;
   place-items: center;
   padding: 18px;
@@ -404,12 +432,12 @@ h3 {
 }
 
 .logo-card--wide {
-  width: 210px;
+  width: 250px;
 }
 
 .logo-card img {
   max-width: 100%;
-  max-height: 58px;
+  max-height: 76px;
   object-fit: contain;
 }
 
@@ -435,6 +463,7 @@ h3 {
   height: 100%;
   min-height: 520px;
   object-fit: cover;
+  object-position: center 30%;
 }
 
 .metrics__content h2 {
@@ -491,6 +520,7 @@ h3 {
   padding: 30px;
   border-radius: var(--radius);
   border: 1px solid var(--line);
+  overflow: hidden;
 }
 
 .preview-card--students {
@@ -503,6 +533,28 @@ h3 {
 
 .preview-card p:not(.eyebrow) {
   max-width: 560px;
+}
+
+.preview-card__image {
+  width: calc(100% + 60px);
+  height: 190px;
+  margin: -30px -30px 24px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(4, 0, 80, 0.1);
+}
+
+.preview-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-card--students .preview-card__image img {
+  object-position: center 42%;
+}
+
+.preview-card--clients .preview-card__image img {
+  object-position: center 36%;
 }
 
 .leadership-teaser {
@@ -529,7 +581,7 @@ h3 {
   border-radius: var(--radius);
   background:
     linear-gradient(160deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)),
-    url("assets/pomona-hero-poster.jpg") center/cover;
+    url("assets/photos/leadership-team.jpg") center 35%/cover;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
 }
 
@@ -552,6 +604,43 @@ h3 {
   align-items: start;
 }
 
+.photo-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.photo-card {
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 50px rgba(25, 22, 8, 0.08);
+}
+
+.photo-card img {
+  width: 100%;
+  height: min(48vw, 520px);
+  min-height: 320px;
+  object-fit: cover;
+}
+
+.photo-card--top img {
+  object-position: center 24%;
+}
+
+.photo-card--presentation img {
+  object-position: center 38%;
+}
+
+.mini-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
 .detail-grid,
 .project-grid,
 .profile-grid {
@@ -569,6 +658,23 @@ h3 {
 
 .profile-grid {
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.directors-layout {
+  display: grid;
+  gap: 18px;
+}
+
+.directors-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.directors-row--center {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(760px, 100%);
+  margin: 0 auto;
 }
 
 .detail-card,
@@ -627,6 +733,147 @@ h3 {
   box-shadow: 0 0 0 1px var(--line);
 }
 
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.journey-card {
+  position: relative;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  border: 1px solid rgba(4, 0, 80, 0.12);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 14px 34px rgba(25, 22, 8, 0.06);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.journey-card::before {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  top: 70px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.journey-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(217, 184, 93, 0.7);
+  box-shadow: 0 22px 50px rgba(25, 22, 8, 0.11);
+}
+
+.journey-card span {
+  color: var(--sage-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journey-card p {
+  color: var(--muted);
+  line-height: 1.58;
+}
+
+.timeline-list {
+  display: grid;
+  gap: 18px;
+}
+
+.timeline-role {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: 22px;
+  align-items: start;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.date-list {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.date-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(4, 0, 80, 0.09);
+}
+
+.check-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.check-grid label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid rgba(4, 0, 80, 0.12);
+  border-radius: var(--radius);
+  background: #fffdf8;
+}
+
+.check-grid input {
+  width: auto;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.post-card {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  border-radius: var(--radius);
+  background:
+    linear-gradient(to top, rgba(6, 6, 79, 0.7), transparent 70%),
+    url("assets/photos/team-warm.jpg") center/cover;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.post-card:nth-child(2) {
+  background:
+    linear-gradient(to top, rgba(6, 6, 79, 0.7), transparent 70%),
+    url("assets/photos/home-students-preview.jpg") center/cover;
+}
+
+.post-card:nth-child(3) {
+  background:
+    linear-gradient(to top, rgba(6, 6, 79, 0.7), transparent 70%),
+    url("assets/photos/clients-boba.jpg") center/cover;
+}
+
 .form-panel {
   display: grid;
   grid-template-columns: 0.82fr 1.18fr;
@@ -683,6 +930,7 @@ textarea:focus {
 .profile-card {
   display: grid;
   gap: 14px;
+  min-height: 100%;
 }
 
 .profile-photo {
@@ -690,12 +938,11 @@ textarea:focus {
   display: grid;
   place-items: center;
   border-radius: var(--radius);
-  background:
-    linear-gradient(135deg, rgba(217, 184, 93, 0.55), rgba(111, 140, 114, 0.58)),
-    url("assets/pomona-hero-poster.jpg") center/cover;
-  color: var(--white);
+  background: linear-gradient(135deg, #f1eadc, #dfe8d8);
+  color: var(--navy);
   font-family: var(--font-display);
   font-size: 2rem;
+  box-shadow: inset 0 0 0 1px rgba(4, 0, 80, 0.1);
 }
 
 .profile-meta {
@@ -804,7 +1051,9 @@ textarea:focus {
   .preview-grid,
   .leadership-teaser,
   .content-split,
+  .photo-split,
   .form-panel,
+  .instagram-grid,
   .footer {
     grid-template-columns: 1fr;
   }
@@ -812,6 +1061,13 @@ textarea:focus {
   .metrics__photo,
   .metrics__photo img {
     min-height: 340px;
+  }
+
+  .journey-grid,
+  .directors-row,
+  .directors-row--center {
+    grid-template-columns: 1fr;
+    width: 100%;
   }
 
   .footer,
@@ -838,7 +1094,11 @@ textarea:focus {
   }
 
   h1 {
-    font-size: clamp(3rem, 15vw, 4.8rem);
+    font-size: clamp(2.65rem, 13vw, 4.5rem);
+  }
+
+  .hero--page h1 {
+    font-size: clamp(2.35rem, 11vw, 3.8rem);
   }
 
   .hero__dek {
@@ -853,6 +1113,9 @@ textarea:focus {
   .detail-grid,
   .project-grid,
   .profile-grid,
+  .post-grid,
+  .timeline-role,
+  .check-grid,
   .form-row {
     grid-template-columns: 1fr;
   }
@@ -862,12 +1125,21 @@ textarea:focus {
     padding: 22px;
   }
 
+  .preview-card__image {
+    width: calc(100% + 44px);
+    margin: -22px -22px 20px;
+  }
+
   .logo-card {
-    width: 138px;
-    height: 84px;
+    width: 156px;
+    height: 96px;
   }
 
   .logo-card--wide {
-    width: 178px;
+    width: 198px;
+  }
+
+  .logo-card img {
+    max-height: 66px;
   }
 }
