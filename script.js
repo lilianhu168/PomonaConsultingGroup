@@ -87,6 +87,7 @@ document.querySelectorAll("[data-mailto], [data-google-form]").forEach((form) =>
     const requiredCheckboxName = form.dataset.requireCheckbox;
     const status = form.querySelector(".form-status");
     const submitButton = form.querySelector('button[type="submit"]');
+    const successPanel = form.parentElement?.querySelector("[data-form-success]");
 
     if (requiredCheckboxName) {
       const hasSelection = form.querySelector(`input[name="${requiredCheckboxName}"]:checked`);
@@ -127,7 +128,14 @@ document.querySelectorAll("[data-mailto], [data-google-form]").forEach((form) =>
           body: googleFormData
         });
         form.reset();
-        if (status) status.textContent = "Thank you. Your interest has been submitted.";
+        if (successPanel) {
+          form.hidden = true;
+          successPanel.hidden = false;
+          successPanel.classList.add("is-visible");
+          successPanel.focus?.();
+        } else if (status) {
+          status.textContent = "Thank you. Your response has been recorded.";
+        }
       } catch {
         if (status) status.textContent = "Submission failed. Opening the Google Form so you can submit there.";
         if (GOOGLE_FORM_FALLBACK_URL) window.open(GOOGLE_FORM_FALLBACK_URL, "_blank", "noopener,noreferrer");
