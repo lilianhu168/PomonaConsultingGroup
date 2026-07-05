@@ -139,33 +139,35 @@
             <a class="button" href="events.html">View Workshops & Events</a>
           </div>
         </div>
-        <form class="interest-form reveal" data-google-form data-require-checkbox="Interested in">
-          <div class="form-row">
-            <label>First name *<input name="First name" autocomplete="given-name" required></label>
-            <label>Last name *<input name="Last name" autocomplete="family-name" required></label>
-          </div>
-          <label>Email *<input type="email" name="Email" autocomplete="email" required></label>
-          <fieldset class="interest-choice-panel">
-            <legend>Interested in <span aria-hidden="true">*</span></legend>
-            <p>Select all that apply.</p>
-            <div class="check-grid check-grid--interest">
-              <label><span>Associate Consultant</span><input type="checkbox" name="Interested in" value="Associate Consultant"></label>
-              <label><span>Consultant</span><input type="checkbox" name="Interested in" value="Consultant"></label>
-              <label><span>Project Lead</span><input type="checkbox" name="Interested in" value="Project Lead"></label>
-              <label><span>Events and General Updates</span><input type="checkbox" name="Interested in" value="Events and General Updates"></label>
+        <div class="form-slot reveal">
+          <form class="interest-form" data-google-form data-require-checkbox="Interested in">
+            <div class="form-row">
+              <label>First name *<input name="First name" autocomplete="given-name" required></label>
+              <label>Last name *<input name="Last name" autocomplete="family-name" required></label>
             </div>
-          </fieldset>
-          <label>Anything else you want us to know? <textarea name="Notes" rows="4"></textarea></label>
-          <button class="button" type="submit">Submit Interest</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
-        <div class="form-success reveal" data-form-success hidden tabindex="-1">
-          <p class="eyebrow">Interest submitted</p>
-          <h3>Thank you. Your response has been recorded.</h3>
-          <p>We are excited to keep you in the loop. For the quickest updates on recruiting, workshops, application deadlines, and PCG events, connect with us on Instagram.</p>
-          <div class="mini-nav">
-            <a class="button button--warm" href="https://www.instagram.com/pomonaconsulting/" target="_blank" rel="noreferrer">Follow us on Instagram</a>
-            <a class="button" href="recruiting.html">View Application Timelines</a>
+            <label>Email *<input type="email" name="Email" autocomplete="email" required></label>
+            <fieldset class="interest-choice-panel">
+              <legend>Interested in <span aria-hidden="true">*</span></legend>
+              <p>Select all that apply.</p>
+              <div class="check-grid check-grid--interest">
+                <label><span>Associate Consultant</span><input type="checkbox" name="Interested in" value="Associate Consultant"></label>
+                <label><span>Consultant</span><input type="checkbox" name="Interested in" value="Consultant"></label>
+                <label><span>Project Lead</span><input type="checkbox" name="Interested in" value="Project Lead"></label>
+                <label><span>Events and General Updates</span><input type="checkbox" name="Interested in" value="Events and General Updates"></label>
+              </div>
+            </fieldset>
+            <label>Anything else you want us to know? <textarea name="Notes" rows="4"></textarea></label>
+            <button class="button" type="submit">Submit Interest</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+          <div class="form-success" data-form-success hidden tabindex="-1">
+            <p class="eyebrow">Interest submitted</p>
+            <h3>Thank you. Your response has been recorded.</h3>
+            <p>We are excited to keep you in the loop. For the quickest updates on recruiting, workshops, application deadlines, and PCG events, connect with us on Instagram.</p>
+            <div class="mini-nav">
+              <a class="button button--warm" href="https://www.instagram.com/pomonaconsulting/" target="_blank" rel="noreferrer">Follow us on Instagram</a>
+              <a class="button" href="recruiting.html">View Application Timelines</a>
+            </div>
           </div>
         </div>
       </section>
