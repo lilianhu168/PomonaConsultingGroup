@@ -4,15 +4,15 @@ const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 
-const GOOGLE_FORM_ACTION = "";
+const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSc-n0agg2b75Gey_7n255HL6e1tuHyp1qlpeEDs7alUfjDraw/formResponse";
 const GOOGLE_FORM_FIELDS = {
-  firstName: "",
-  lastName: "",
-  email: "",
-  interestedIn: "",
-  message: ""
+  firstName: "entry.804893552",
+  lastName: "entry.1641395971",
+  email: "entry.130556750",
+  interestedIn: "entry.1197041256",
+  message: "entry.999343998"
 };
-const GOOGLE_FORM_FALLBACK_URL = "";
+const GOOGLE_FORM_FALLBACK_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc-n0agg2b75Gey_7n255HL6e1tuHyp1qlpeEDs7alUfjDraw/viewform";
 
 body.classList.add("is-loading");
 
