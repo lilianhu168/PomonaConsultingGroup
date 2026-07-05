@@ -71,10 +71,12 @@ const countObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll("[data-count]").forEach((number) => countObserver.observe(number));
 
-document.querySelectorAll("[data-mailto]").forEach((form) => {
-  form.addEventListener("submit", (event) => {
+document.querySelectorAll("[data-mailto], [data-sheet-endpoint]").forEach((form) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const requiredCheckboxName = form.dataset.requireCheckbox;
+    const status = form.querySelector(".form-status");
+    const submitButton = form.querySelector('button[type="submit"]');
 
     if (requiredCheckboxName) {
       const hasSelection = form.querySelector(`input[name="${requiredCheckboxName}"]:checked`);
@@ -86,9 +88,32 @@ document.querySelectorAll("[data-mailto]").forEach((form) => {
     }
 
     const formData = new FormData(form);
+    const sheetEndpoint = form.dataset.sheetEndpoint?.trim();
+
+    if (sheetEndpoint) {
+      if (status) status.textContent = "Submitting...";
+      if (submitButton) submitButton.disabled = true;
+
+      try {
+        await fetch(sheetEndpoint, {
+          method: "POST",
+          mode: "no-cors",
+          body: formData
+        });
+        form.reset();
+        if (status) status.textContent = "Thank you. Your interest has been submitted.";
+      } catch {
+        if (status) status.textContent = "Something went wrong. Please try again or email pomonaconsulting@gmail.com.";
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
+      return;
+    }
+
     const lines = Array.from(formData.entries()).map(([key, value]) => `${key}: ${value}`);
     const subject = encodeURIComponent(form.dataset.subject || "PCG Interest Form");
     const body = encodeURIComponent(lines.join("\n"));
+    if (status) status.textContent = "Opening your email app to send this interest form.";
     window.location.href = `mailto:${form.dataset.mailto}?subject=${subject}&body=${body}`;
   });
 });
