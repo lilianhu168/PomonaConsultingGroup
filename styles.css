@@ -1086,6 +1086,8 @@ h3 {
 }
 
 .check-grid--interest label span {
+  flex: 1 1 auto;
+  min-width: 0;
   color: var(--ink);
   font-weight: 700;
   line-height: 1.2;
@@ -1093,6 +1095,7 @@ h3 {
 
 .check-grid--interest input {
   flex: 0 0 auto;
+  margin-left: auto;
   width: 18px;
   height: 18px;
   min-height: 0;
