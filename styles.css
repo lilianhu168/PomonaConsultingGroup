@@ -1221,34 +1221,6 @@ h3 {
   display: none;
 }
 
-.interest-form::before,
-.interest-form::after {
-  content: "";
-  position: absolute;
-  inset: auto 0 0;
-  z-index: 3;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 220ms ease;
-}
-
-.interest-form::before {
-  top: 43%;
-  border-left: min(320px, 50vw) solid transparent;
-  border-right: min(320px, 50vw) solid transparent;
-  border-bottom: 150px solid rgba(255, 253, 248, 0.98);
-  filter: drop-shadow(0 -1px 0 rgba(4, 0, 80, 0.12));
-}
-
-.interest-form::after {
-  top: 42%;
-  height: 48%;
-  background:
-    linear-gradient(145deg, rgba(244, 237, 220, 0) 49.5%, rgba(217, 184, 93, 0.48) 50%, rgba(244, 237, 220, 0) 50.5%),
-    linear-gradient(215deg, rgba(244, 237, 220, 0) 49.5%, rgba(217, 184, 93, 0.48) 50%, rgba(244, 237, 220, 0) 50.5%),
-    linear-gradient(180deg, #fffdf8, #f4eddc);
-}
-
 .interest-form label {
   display: grid;
   gap: 7px;
@@ -1266,21 +1238,12 @@ h3 {
 }
 
 .form-slot[data-form-state="sent"] .interest-form {
-  animation: envelope-card 900ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: form-card-to-plane 720ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   border-color: rgba(217, 184, 93, 0.74);
 }
 
 .form-slot[data-form-state="sent"] .interest-form > * {
-  animation: form-fields-fold 520ms ease forwards;
-}
-
-.form-slot[data-form-state="sent"] .interest-form::before,
-.form-slot[data-form-state="sent"] .interest-form::after {
-  opacity: 1;
-}
-
-.form-slot[data-form-state="sent"] .interest-form::before {
-  animation: envelope-flap 760ms 320ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: form-fields-fold 420ms ease forwards;
 }
 
 .interest-form > .button {
@@ -1347,7 +1310,7 @@ h3 {
 }
 
 .form-slot[data-form-state="sent"] .paper-plane {
-  animation: paper-plane-send 1100ms 520ms cubic-bezier(0.2, 0.82, 0.24, 1) forwards;
+  animation: paper-plane-send 1050ms 300ms cubic-bezier(0.2, 0.82, 0.24, 1) forwards;
 }
 
 .form-row {
@@ -1700,32 +1663,22 @@ textarea:focus {
   }
   100% {
     opacity: 0;
-    transform: translateY(26px) scale(0.9);
+    transform: translate(18px, -12px) scale(0.82);
   }
 }
 
-@keyframes envelope-card {
+@keyframes form-card-to-plane {
   0% {
-    transform: scale(1);
-    min-height: 0;
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
   }
-  46% {
-    transform: scale(0.96, 0.72);
+  48% {
+    opacity: 1;
+    transform: translate(26px, -18px) rotate(3deg) scale(0.58, 0.46);
   }
   100% {
-    transform: translateY(20px) scale(0.82, 0.46);
-  }
-}
-
-@keyframes envelope-flap {
-  0% {
-    transform: translateY(-18px) rotateX(0deg);
-  }
-  58% {
-    transform: translateY(-6px) rotateX(58deg);
-  }
-  100% {
-    transform: translateY(0) rotateX(0deg);
+    opacity: 0;
+    transform: translate(38px, -26px) rotate(10deg) scale(0.18);
   }
 }
 
@@ -1761,7 +1714,6 @@ textarea:focus {
 @media (prefers-reduced-motion: reduce) {
   .form-slot[data-form-state] .interest-form,
   .form-slot[data-form-state] .interest-form > *,
-  .form-slot[data-form-state] .interest-form::before,
   .form-slot[data-form-state] .paper-plane,
   .form-slot[data-form-state] .form-success {
     animation: none !important;
