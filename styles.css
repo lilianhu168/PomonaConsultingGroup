@@ -1088,14 +1088,32 @@ h3 {
   align-items: center;
 }
 
+.instagram-grid--feature {
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.instagram-grid--feature .section-heading {
+  width: min(720px, 100%);
+}
+
+.instagram-grid--feature h2 {
+  font-size: clamp(2rem, 3vw, 3.25rem);
+}
+
+.instagram-grid--feature .button {
+  margin-top: 8px;
+}
+
 .post-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 22px;
 }
 
 .post-card {
-  min-height: 260px;
+  min-height: 310px;
   aspect-ratio: 4 / 3;
   display: flex;
   flex-direction: column;
@@ -1103,7 +1121,7 @@ h3 {
   padding: 18px;
   border-radius: var(--radius);
   background:
-    linear-gradient(to top, rgba(6, 6, 79, 0.74), rgba(6, 6, 79, 0.08) 70%),
+    linear-gradient(to top, rgba(6, 6, 79, 0.78) 0%, rgba(6, 6, 79, 0.42) 34%, rgba(6, 6, 79, 0) 70%),
     url("assets/photos/team-warm.jpg") center/cover;
   color: var(--white);
   overflow: hidden;
@@ -1111,7 +1129,7 @@ h3 {
 
 .post-card strong {
   font-family: var(--font-display);
-  font-size: 1.28rem;
+  font-size: clamp(1.24rem, 1.5vw, 1.48rem);
   font-weight: 400;
   line-height: 1.05;
 }
@@ -1126,20 +1144,20 @@ h3 {
 
 .post-card--events {
   background:
-    linear-gradient(to top, rgba(6, 6, 79, 0.74), rgba(6, 6, 79, 0.08) 70%),
-    url("assets/photos/follow-events.jpg") center 44%/cover;
+    linear-gradient(to top, rgba(6, 6, 79, 0.78) 0%, rgba(6, 6, 79, 0.42) 34%, rgba(6, 6, 79, 0) 70%),
+    url("assets/photos/follow-events.jpg") center 46%/cover;
 }
 
 .post-card--presentation {
   background:
-    linear-gradient(to top, rgba(6, 6, 79, 0.74), rgba(6, 6, 79, 0.08) 70%),
-    url("assets/photos/follow-presentation.jpg") center 40%/cover;
+    linear-gradient(to top, rgba(6, 6, 79, 0.78) 0%, rgba(6, 6, 79, 0.42) 34%, rgba(6, 6, 79, 0) 70%),
+    url("assets/photos/follow-presentation.jpg") center 42%/cover;
 }
 
 .post-card--recruiting {
   background:
-    linear-gradient(to top, rgba(6, 6, 79, 0.74), rgba(6, 6, 79, 0.08) 70%),
-    url("assets/photos/follow-recruiting.jpg") center 44%/cover;
+    linear-gradient(to top, rgba(6, 6, 79, 0.78) 0%, rgba(6, 6, 79, 0.42) 34%, rgba(6, 6, 79, 0) 70%),
+    url("assets/photos/follow-recruiting.jpg") center 40%/cover;
 }
 
 .form-panel {
@@ -1373,6 +1391,14 @@ textarea:focus {
     min-height: 240px;
   }
 
+  .instagram-grid--feature {
+    gap: 28px;
+  }
+
+  .instagram-grid--feature .section-heading {
+    text-align: center;
+  }
+
   .footer,
   .footer div,
   .footer div:last-child {
@@ -1438,6 +1464,18 @@ textarea:focus {
 
   .check-grid--interest {
     grid-template-columns: 1fr;
+  }
+
+  .instagram-grid--feature h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .post-grid {
+    gap: 16px;
+  }
+
+  .post-card {
+    min-height: 280px;
   }
 
   .preview-card {
