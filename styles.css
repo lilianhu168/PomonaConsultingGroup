@@ -922,10 +922,10 @@ h3 {
 .journey-card {
   position: relative;
   z-index: 1;
-  min-height: 385px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 28px;
   border: 1px solid rgba(4, 0, 80, 0.12);
   border-radius: var(--radius);
@@ -965,14 +965,15 @@ h3 {
   margin-top: 28px;
 }
 
-.journey-card .button {
-  width: 100%;
-  margin-top: 18px;
-}
-
 .journey-card p {
   color: var(--muted);
   line-height: 1.58;
+}
+
+.journey-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
 }
 
 .timeline-list {
