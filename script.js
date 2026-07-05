@@ -4,6 +4,16 @@ const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 
+const GOOGLE_FORM_ACTION = "";
+const GOOGLE_FORM_FIELDS = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  interestedIn: "",
+  message: ""
+};
+const GOOGLE_FORM_FALLBACK_URL = "";
+
 body.classList.add("is-loading");
 
 const hideLoader = () => {
@@ -71,7 +81,7 @@ const countObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll("[data-count]").forEach((number) => countObserver.observe(number));
 
-document.querySelectorAll("[data-mailto], [data-sheet-endpoint]").forEach((form) => {
+document.querySelectorAll("[data-mailto], [data-google-form]").forEach((form) => {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const requiredCheckboxName = form.dataset.requireCheckbox;
@@ -88,22 +98,39 @@ document.querySelectorAll("[data-mailto], [data-sheet-endpoint]").forEach((form)
     }
 
     const formData = new FormData(form);
-    const sheetEndpoint = form.dataset.sheetEndpoint?.trim();
 
-    if (sheetEndpoint) {
+    if (form.matches("[data-google-form]")) {
+      const isConfigured = GOOGLE_FORM_ACTION && Object.values(GOOGLE_FORM_FIELDS).every(Boolean);
+
+      if (!isConfigured) {
+        if (status) status.textContent = "This form is almost ready. Please add the Google Form URL and field IDs.";
+        if (GOOGLE_FORM_FALLBACK_URL) window.open(GOOGLE_FORM_FALLBACK_URL, "_blank", "noopener,noreferrer");
+        return;
+      }
+
+      const googleFormData = new URLSearchParams();
+      googleFormData.append(GOOGLE_FORM_FIELDS.firstName, formData.get("First name") || "");
+      googleFormData.append(GOOGLE_FORM_FIELDS.lastName, formData.get("Last name") || "");
+      googleFormData.append(GOOGLE_FORM_FIELDS.email, formData.get("Email") || "");
+      formData.getAll("Interested in").forEach((selection) => {
+        googleFormData.append(GOOGLE_FORM_FIELDS.interestedIn, selection);
+      });
+      googleFormData.append(GOOGLE_FORM_FIELDS.message, formData.get("Notes") || "");
+
       if (status) status.textContent = "Submitting...";
       if (submitButton) submitButton.disabled = true;
 
       try {
-        await fetch(sheetEndpoint, {
+        await fetch(GOOGLE_FORM_ACTION, {
           method: "POST",
           mode: "no-cors",
-          body: formData
+          body: googleFormData
         });
         form.reset();
         if (status) status.textContent = "Thank you. Your interest has been submitted.";
       } catch {
-        if (status) status.textContent = "Something went wrong. Please try again or email pomonaconsulting@gmail.com.";
+        if (status) status.textContent = "Submission failed. Opening the Google Form so you can submit there.";
+        if (GOOGLE_FORM_FALLBACK_URL) window.open(GOOGLE_FORM_FALLBACK_URL, "_blank", "noopener,noreferrer");
       } finally {
         if (submitButton) submitButton.disabled = false;
       }

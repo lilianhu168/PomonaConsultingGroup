@@ -22,7 +22,9 @@ The hero uses `assets/pomona-hero.mp4`, a short self-hosted clip trimmed from th
 
 ## Forms
 
-The student interest form lives on `students.html`, and the client interest form lives on `clients.html`. Both currently create pre-filled email drafts to `pomonaconsulting@gmail.com`. To collect responses in a database or spreadsheet, replace the `data-mailto` setup with Google Forms, Formspree, Airtable, or another form backend.
+The student interest form lives on `students.html` and is wired in `script.js` to submit to a public Google Form `formResponse` endpoint. Add the Google Form action URL and `entry.xxxxx` IDs to `GOOGLE_FORM_ACTION` and `GOOGLE_FORM_FIELDS` in `script.js`.
+
+The client interest form lives on `clients.html` and currently creates a pre-filled email draft to `pomonaconsulting@gmail.com`.
 
 ## Publish On GitHub Pages
 
@@ -35,5 +37,5 @@ The student interest form lives on `students.html`, and the client interest form
 ## Suggested Next Tweaks
 
 - Replace placeholder leadership profiles with real headshots, names, emails, majors, years, and role descriptions.
-- Connect the forms to Google Forms or a proper backend.
+- Add the live Google Form action URL and field IDs for the student interest form.
 - Replace Instagram and LinkedIn footer links with PCG's real profile URLs.
