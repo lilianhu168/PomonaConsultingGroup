@@ -1238,12 +1238,12 @@ h3 {
 }
 
 .form-slot[data-form-state="sent"] .interest-form {
-  animation: form-card-to-plane 720ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation: form-card-to-plane 560ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   border-color: rgba(217, 184, 93, 0.74);
 }
 
 .form-slot[data-form-state="sent"] .interest-form > * {
-  animation: form-fields-fold 420ms ease forwards;
+  animation: form-fields-fold 320ms ease forwards;
 }
 
 .interest-form > .button {
@@ -1302,15 +1302,15 @@ h3 {
   left: 50%;
   top: 52%;
   z-index: 6;
-  width: 54px;
-  height: 54px;
+  width: 46px;
+  height: 46px;
   pointer-events: none;
   opacity: 0;
   transform: translate(-50%, -50%) rotate(-8deg) scale(0.72);
 }
 
 .form-slot[data-form-state="sent"] .paper-plane {
-  animation: paper-plane-send 1050ms 300ms cubic-bezier(0.2, 0.82, 0.24, 1) forwards;
+  animation: paper-plane-send 980ms 220ms cubic-bezier(0.2, 0.82, 0.24, 1) forwards;
 }
 
 .form-row {
@@ -1663,7 +1663,7 @@ textarea:focus {
   }
   100% {
     opacity: 0;
-    transform: translate(18px, -12px) scale(0.82);
+    transform: translate(20px, -14px) scale(0.72);
   }
 }
 
@@ -1672,31 +1672,33 @@ textarea:focus {
     opacity: 1;
     transform: translate(0, 0) rotate(0deg) scale(1);
   }
-  48% {
-    opacity: 1;
-    transform: translate(26px, -18px) rotate(3deg) scale(0.58, 0.46);
+  42% {
+    opacity: 0.55;
+    transform: translate(26px, -18px) rotate(4deg) scale(0.34, 0.24);
+    box-shadow: 0 10px 24px rgba(25, 22, 8, 0.05);
   }
   100% {
     opacity: 0;
-    transform: translate(38px, -26px) rotate(10deg) scale(0.18);
+    transform: translate(36px, -28px) rotate(16deg) scale(0.06);
+    box-shadow: none;
   }
 }
 
 @keyframes paper-plane-send {
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) rotate(-10deg) scale(0.68);
+    transform: translate(-50%, -50%) rotate(-12deg) scale(0.48);
   }
   14% {
     opacity: 1;
   }
   58% {
     opacity: 1;
-    transform: translate(58%, -170%) rotate(18deg) scale(1);
+    transform: translate(54%, -160%) rotate(16deg) scale(0.9);
   }
   100% {
     opacity: 0;
-    transform: translate(170%, -310%) rotate(34deg) scale(0.68);
+    transform: translate(155%, -295%) rotate(32deg) scale(0.56);
   }
 }
 

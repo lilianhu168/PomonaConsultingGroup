@@ -13,7 +13,7 @@ const GOOGLE_FORM_FIELDS = {
   message: "entry.999343998"
 };
 const GOOGLE_FORM_FALLBACK_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc-n0agg2b75Gey_7n255HL6e1tuHyp1qlpeEDs7alUfjDraw/viewform";
-const FORM_SEND_ANIMATION_MS = 1350;
+const FORM_SEND_ANIMATION_MS = 1250;
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 body.classList.add("is-loading");
