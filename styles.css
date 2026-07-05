@@ -1044,31 +1044,45 @@ h3 {
 
 .interest-choice-panel {
   display: grid;
-  justify-items: center;
-  gap: 10px;
-  padding: 14px;
-  border: 1px solid rgba(4, 0, 80, 0.08);
-  border-radius: var(--radius);
-  background: #fbf7ef;
+  gap: 8px;
+  margin: 0;
+  padding: 2px 0 0;
+  border: 0;
+  background: transparent;
 }
 
-.interest-choice-panel .eyebrow {
-  width: min(420px, 100%);
-  margin-bottom: 0;
-  color: var(--sage-dark);
+.interest-choice-panel legend {
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.interest-choice-panel > p {
+  margin: -2px 0 4px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 .check-grid--interest {
-  width: min(560px, 100%);
+  width: 100%;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .check-grid--interest label {
-  min-height: 58px;
+  display: flex;
+  min-height: 54px;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 14px 16px;
+  border: 1px solid rgba(4, 0, 80, 0.12);
+  border-radius: var(--radius);
+  background: #fffdf8;
   cursor: pointer;
+  transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .check-grid--interest label span {
@@ -1079,6 +1093,16 @@ h3 {
 
 .check-grid--interest input {
   flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  min-height: 0;
+  accent-color: var(--navy-soft);
+}
+
+.check-grid--interest label:has(input:checked) {
+  border-color: rgba(20, 21, 111, 0.72);
+  background: rgba(134, 139, 191, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(20, 21, 111, 0.18);
 }
 
 .instagram-grid {
@@ -1162,19 +1186,22 @@ h3 {
 
 .form-panel {
   display: grid;
-  grid-template-columns: 0.82fr 1.18fr;
-  gap: 28px;
+  grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1fr);
+  gap: 34px;
   align-items: start;
   background: var(--cream);
 }
 
 .interest-form {
+  width: min(640px, 100%);
+  justify-self: end;
   display: grid;
-  gap: 16px;
-  padding: 24px;
+  gap: 15px;
+  padding: 26px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--white);
+  box-shadow: 0 18px 50px rgba(25, 22, 8, 0.07);
 }
 
 .interest-form label {
@@ -1182,6 +1209,11 @@ h3 {
   gap: 7px;
   color: var(--ink);
   font-size: 0.88rem;
+}
+
+.interest-form > .button {
+  width: 100%;
+  margin-top: 2px;
 }
 
 .form-row {
@@ -1194,6 +1226,7 @@ input,
 select,
 textarea {
   width: 100%;
+  min-height: 46px;
   border: 1px solid rgba(4, 0, 80, 0.16);
   border-radius: var(--radius);
   background: #fffdf8;
@@ -1203,6 +1236,7 @@ textarea {
 }
 
 textarea {
+  min-height: 118px;
   resize: vertical;
 }
 
@@ -1404,6 +1438,11 @@ textarea:focus {
   .footer div:last-child {
     justify-content: center;
     text-align: center;
+  }
+
+  .interest-form {
+    width: 100%;
+    justify-self: stretch;
   }
 }
 
