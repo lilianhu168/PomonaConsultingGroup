@@ -13,6 +13,8 @@ const GOOGLE_FORM_FIELDS = {
   message: "entry.999343998"
 };
 const GOOGLE_FORM_FALLBACK_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc-n0agg2b75Gey_7n255HL6e1tuHyp1qlpeEDs7alUfjDraw/viewform";
+const FORM_SEND_ANIMATION_MS = 1650;
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 body.classList.add("is-loading");
 
@@ -88,6 +90,7 @@ document.querySelectorAll("[data-mailto], [data-google-form]").forEach((form) =>
     const status = form.querySelector(".form-status");
     const submitButton = form.querySelector('button[type="submit"]');
     const successPanel = form.parentElement?.querySelector("[data-form-success]");
+    const formSlot = form.closest("[data-form-state]");
 
     if (requiredCheckboxName) {
       const hasSelection = form.querySelector(`input[name="${requiredCheckboxName}"]:checked`);
@@ -118,6 +121,7 @@ document.querySelectorAll("[data-mailto], [data-google-form]").forEach((form) =>
       });
       googleFormData.append(GOOGLE_FORM_FIELDS.message, formData.get("Notes") || "");
 
+      if (formSlot) formSlot.dataset.formState = "submitting";
       if (status) status.textContent = "Submitting...";
       if (submitButton) submitButton.disabled = true;
 
@@ -129,14 +133,25 @@ document.querySelectorAll("[data-mailto], [data-google-form]").forEach((form) =>
         });
         form.reset();
         if (successPanel) {
-          form.hidden = true;
-          successPanel.hidden = false;
-          successPanel.classList.add("is-visible");
-          successPanel.focus?.();
+          const showSuccess = () => {
+            form.hidden = true;
+            successPanel.hidden = false;
+            successPanel.classList.add("is-visible");
+            if (formSlot) formSlot.dataset.formState = "complete";
+            successPanel.focus?.();
+          };
+
+          if (prefersReducedMotion.matches) {
+            showSuccess();
+          } else {
+            if (formSlot) formSlot.dataset.formState = "sent";
+            window.setTimeout(showSuccess, FORM_SEND_ANIMATION_MS);
+          }
         } else if (status) {
           status.textContent = "Thank you. Your response has been recorded.";
         }
       } catch {
+        if (formSlot) formSlot.dataset.formState = "idle";
         if (status) status.textContent = "Submission failed. Opening the Google Form so you can submit there.";
         if (GOOGLE_FORM_FALLBACK_URL) window.open(GOOGLE_FORM_FALLBACK_URL, "_blank", "noopener,noreferrer");
       } finally {

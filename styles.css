@@ -1196,11 +1196,15 @@ h3 {
 .form-slot {
   grid-column: 2;
   grid-row: 1;
+  position: relative;
   width: min(640px, 100%);
   justify-self: end;
+  min-height: 420px;
 }
 
 .interest-form {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   display: grid;
   gap: 15px;
@@ -1209,10 +1213,40 @@ h3 {
   border-radius: var(--radius);
   background: var(--white);
   box-shadow: 0 18px 50px rgba(25, 22, 8, 0.07);
+  transform-origin: 50% 62%;
+  transition: transform 420ms ease, border-color 420ms ease, box-shadow 420ms ease;
 }
 
 .interest-form[hidden] {
   display: none;
+}
+
+.interest-form::before,
+.interest-form::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+.interest-form::before {
+  top: 43%;
+  border-left: min(320px, 50vw) solid transparent;
+  border-right: min(320px, 50vw) solid transparent;
+  border-bottom: 150px solid rgba(255, 253, 248, 0.98);
+  filter: drop-shadow(0 -1px 0 rgba(4, 0, 80, 0.12));
+}
+
+.interest-form::after {
+  top: 42%;
+  height: 48%;
+  background:
+    linear-gradient(145deg, rgba(244, 237, 220, 0) 49.5%, rgba(217, 184, 93, 0.48) 50%, rgba(244, 237, 220, 0) 50.5%),
+    linear-gradient(215deg, rgba(244, 237, 220, 0) 49.5%, rgba(217, 184, 93, 0.48) 50%, rgba(244, 237, 220, 0) 50.5%),
+    linear-gradient(180deg, #fffdf8, #f4eddc);
 }
 
 .interest-form label {
@@ -1220,6 +1254,33 @@ h3 {
   gap: 7px;
   color: var(--ink);
   font-size: 0.88rem;
+}
+
+.interest-form > * {
+  transition: opacity 280ms ease, transform 280ms ease;
+}
+
+.form-slot[data-form-state="submitting"] .interest-form {
+  border-color: rgba(217, 184, 93, 0.55);
+  box-shadow: 0 20px 54px rgba(25, 22, 8, 0.1);
+}
+
+.form-slot[data-form-state="sent"] .interest-form {
+  animation: envelope-card 900ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  border-color: rgba(217, 184, 93, 0.74);
+}
+
+.form-slot[data-form-state="sent"] .interest-form > * {
+  animation: form-fields-fold 520ms ease forwards;
+}
+
+.form-slot[data-form-state="sent"] .interest-form::before,
+.form-slot[data-form-state="sent"] .interest-form::after {
+  opacity: 1;
+}
+
+.form-slot[data-form-state="sent"] .interest-form::before {
+  animation: envelope-flap 760ms 320ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .interest-form > .button {
@@ -1249,22 +1310,44 @@ h3 {
   border-radius: var(--radius);
   background: linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(244, 237, 220, 0.92));
   box-shadow: 0 18px 50px rgba(25, 22, 8, 0.08);
+  opacity: 0;
+  transform: translateY(16px);
 }
 
 .form-success[hidden] {
   display: none;
 }
 
+.form-slot[data-form-state="complete"] .form-success {
+  animation: success-rise 540ms ease forwards;
+}
+
 .form-success h3 {
   margin: 0;
-  max-width: 11ch;
-  font-size: clamp(2rem, 4vw, 3.35rem);
+  max-width: 17ch;
+  font-size: clamp(2rem, 3vw, 2.8rem);
 }
 
 .form-success p:not(.eyebrow) {
   margin: 0;
   color: var(--muted);
   line-height: 1.65;
+}
+
+.paper-plane {
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  z-index: 6;
+  width: 54px;
+  height: 54px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-8deg) scale(0.72);
+}
+
+.form-slot[data-form-state="sent"] .paper-plane {
+  animation: paper-plane-send 1100ms 520ms cubic-bezier(0.2, 0.82, 0.24, 1) forwards;
 }
 
 .form-row {
@@ -1607,5 +1690,90 @@ textarea:focus {
   .logo-card--remax img,
   .logo-card--access img {
     max-height: 108px;
+  }
+}
+
+@keyframes form-fields-fold {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(26px) scale(0.9);
+  }
+}
+
+@keyframes envelope-card {
+  0% {
+    transform: scale(1);
+    min-height: 0;
+  }
+  46% {
+    transform: scale(0.96, 0.72);
+  }
+  100% {
+    transform: translateY(20px) scale(0.82, 0.46);
+  }
+}
+
+@keyframes envelope-flap {
+  0% {
+    transform: translateY(-18px) rotateX(0deg);
+  }
+  58% {
+    transform: translateY(-6px) rotateX(58deg);
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes paper-plane-send {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-10deg) scale(0.68);
+  }
+  14% {
+    opacity: 1;
+  }
+  58% {
+    opacity: 1;
+    transform: translate(58%, -170%) rotate(18deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(170%, -310%) rotate(34deg) scale(0.68);
+  }
+}
+
+@keyframes success-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-slot[data-form-state] .interest-form,
+  .form-slot[data-form-state] .interest-form > *,
+  .form-slot[data-form-state] .interest-form::before,
+  .form-slot[data-form-state] .paper-plane,
+  .form-slot[data-form-state] .form-success {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .paper-plane {
+    display: none;
+  }
+
+  .form-slot[data-form-state="complete"] .form-success {
+    opacity: 1;
+    transform: none;
   }
 }

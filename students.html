@@ -139,7 +139,7 @@
             <a class="button" href="events.html">View Workshops & Events</a>
           </div>
         </div>
-        <div class="form-slot reveal">
+        <div class="form-slot reveal" data-form-state="idle">
           <form class="interest-form" data-google-form data-require-checkbox="Interested in">
             <div class="form-row">
               <label>First name *<input name="First name" autocomplete="given-name" required></label>
@@ -160,6 +160,10 @@
             <button class="button" type="submit">Submit Interest</button>
             <p class="form-status" role="status" aria-live="polite"></p>
           </form>
+          <svg class="paper-plane" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <path d="M58 8 6 31.5l19.4 7.2L34.2 56 58 8Z" fill="#fffdf8" stroke="#08077c" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M25.4 38.7 58 8 34.2 56l-4.9-17.6" fill="none" stroke="#868bbf" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
           <div class="form-success" data-form-success hidden tabindex="-1">
             <p class="eyebrow">Interest submitted</p>
             <h3>Thank you. Your response has been recorded.</h3>
