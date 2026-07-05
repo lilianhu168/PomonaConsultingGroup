@@ -344,6 +344,12 @@ video {
   display: block;
 }
 
+@media (min-width: 720px) {
+  .hero__title span:first-child {
+    white-space: nowrap;
+  }
+}
+
 .eyebrow {
   margin: 0 0 14px;
   color: currentColor;
@@ -365,6 +371,7 @@ h2,
 h3 {
   font-family: var(--font-display);
   font-weight: 400;
+  text-wrap: balance;
 }
 
 h1 {
@@ -374,7 +381,7 @@ h1 {
 }
 
 .hero--home h1 {
-  font-size: clamp(3.7rem, 7.2vw, 7rem);
+  font-size: clamp(3.7rem, 6.2vw, 6.25rem);
 }
 
 .hero--page h1 {
@@ -385,7 +392,7 @@ h1 {
 
 h2 {
   margin-bottom: 18px;
-  font-size: clamp(2rem, 4vw, 4.25rem);
+  font-size: clamp(2rem, 3.3vw, 3.55rem);
   line-height: 0.98;
 }
 
@@ -589,7 +596,7 @@ h3 {
 }
 
 .metrics__content h2 {
-  font-size: clamp(2rem, 3.6vw, 4rem);
+  font-size: clamp(2rem, 3vw, 3.35rem);
 }
 
 .metrics__grid {
