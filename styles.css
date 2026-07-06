@@ -525,6 +525,10 @@ h3 {
   width: 210px;
 }
 
+.logo-card--wikipedia {
+  width: 250px;
+}
+
 .logo-card img {
   max-width: 100%;
   max-height: 118px;
@@ -538,7 +542,8 @@ h3 {
 
 .logo-card--tall img,
 .logo-card--seal img,
-.logo-card--remax img {
+.logo-card--remax img,
+.logo-card--wikipedia img {
   max-height: 138px;
 }
 
@@ -1640,6 +1645,10 @@ textarea:focus {
     width: 150px;
   }
 
+  .logo-card--wikipedia {
+    width: 190px;
+  }
+
   .logo-card img {
     max-height: 92px;
   }
@@ -1651,7 +1660,8 @@ textarea:focus {
   .logo-card--tall img,
   .logo-card--seal img,
   .logo-card--remax img,
-  .logo-card--access img {
+  .logo-card--access img,
+  .logo-card--wikipedia img {
     max-height: 108px;
   }
 }
