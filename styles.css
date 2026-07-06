@@ -306,8 +306,8 @@ video {
 
 .hero--leadership {
   background:
-    linear-gradient(135deg, rgba(6, 6, 79, 0.48), rgba(70, 102, 75, 0.24)),
-    url("assets/photos/leadership-hero.jpg") center 36%/cover;
+    linear-gradient(135deg, rgba(4, 0, 80, 0.68), rgba(36, 55, 50, 0.44)),
+    url("assets/photos/students-hero-building.jpg") center 54%/cover;
 }
 
 .hero__media {
@@ -850,6 +850,16 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
 }
 
+.profile-grid--md {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.directors-section {
+  border-top: 1px solid var(--line);
+  background: rgba(244, 237, 220, 0.72);
+}
+
 .directors-layout {
   display: grid;
   gap: 18px;
@@ -1359,6 +1369,10 @@ textarea:focus {
   min-height: 100%;
 }
 
+.profile-card--md {
+  align-content: start;
+}
+
 .profile-photo {
   aspect-ratio: 1 / 1;
   display: grid;
@@ -1369,6 +1383,33 @@ textarea:focus {
   font-family: var(--font-display);
   font-size: 2rem;
   box-shadow: inset 0 0 0 1px rgba(4, 0, 80, 0.1);
+  overflow: hidden;
+}
+
+.profile-photo--headshot {
+  aspect-ratio: 4 / 5;
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.profile-photo--headshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-photo--left img {
+  object-position: center center;
+  transform: translateY(8px) scale(1.06);
+}
+
+.profile-photo--middle img {
+  object-position: 44% 42%;
+  transform: translateY(-24px) scale(1.18);
+}
+
+.profile-photo--right img {
+  object-position: center center;
+  transform: translateY(8px) scale(1.05);
 }
 
 .profile-meta {
@@ -1517,6 +1558,7 @@ textarea:focus {
   }
 
   .journey-grid,
+  .profile-grid--md,
   .directors-row,
   .directors-row--center {
     grid-template-columns: 1fr;
