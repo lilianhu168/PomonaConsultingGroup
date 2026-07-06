@@ -749,7 +749,7 @@ h3 {
 }
 
 .portrait-stack div:nth-child(2) img {
-  object-position: center center;
+  object-position: center 30%;
 }
 
 .portrait-stack div:nth-child(3) img {
